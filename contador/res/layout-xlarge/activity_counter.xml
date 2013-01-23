@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".CounterActivity" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/black_overlay" >
+
+        <RelativeLayout
+            android:id="@+id/rl_player1_down"
+            android:layout_width="@dimen/xlarge_counter_bigbutton"
+            android:layout_height="550dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/xlarge_counter_margin"
+            android:background="@color/border"
+            android:onClick="player1Down" >
+
+            <TextView
+                android:id="@+id/tv_player1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:rotation="90"
+                android:text="20"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/xlarge_counter_textsize" />
+
+            <RelativeLayout
+                android:id="@+id/tv_player1_up"
+                android:layout_width="@dimen/xlarge_counter_smallbutton"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/border_transparent"
+                android:onClick="player1Up" />
+
+            <ImageView
+                android:id="@+id/iv_player1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp"
+                android:rotation="90"
+                android:src="@drawable/ic_player" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_player2_down"
+            android:layout_width="@dimen/xlarge_counter_bigbutton"
+            android:layout_height="550dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/xlarge_counter_margin"
+            android:onClick="player2Down"
+            android:background="@color/border" >
+
+            <TextView
+                android:id="@+id/tv_player2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:rotation="-90"
+                android:text="20"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/xlarge_counter_textsize" />
+
+            <RelativeLayout
+                android:id="@+id/tv_player2_up"
+                android:layout_width="@dimen/xlarge_counter_smallbutton"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/border_transparent"
+                android:onClick="player2Up">
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_player2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp"
+                android:rotation="-90"
+                android:src="@drawable/ic_player" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white_border2x"
+            android:text="40:00"
+            android:padding="10dp"
+            android:textSize="@dimen/xlarge_timer_textsize"
+            android:onClick="timerClick"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/tv_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rl_player1_down"
+            android:layout_centerHorizontal="true"
+            android:text="Turno"
+            android:padding="10dp"
+            android:background="@color/white_border2x"
+            android:textSize="50sp"
+            android:onClick="changeMainPlayer"
+            android:clickable="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

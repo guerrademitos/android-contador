@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_counter_bigbutton">200dp</dimen>
+    <dimen name="small_counter_smallbutton">100dp</dimen>
+    <dimen name="small_counter_margin">10dp</dimen>
+    <dimen name="small_counter_textsize">100sp</dimen>
+    
+    <dimen name="normal_counter_bigbutton">200dp</dimen>
+    <dimen name="normal_counter_smallbutton">100dp</dimen>
+    <dimen name="normal_counter_margin">10dp</dimen>
+    <dimen name="normal_counter_textsize">100sp</dimen>
+    
+    <dimen name="large_counter_bigbutton">300dp</dimen>
+    <dimen name="large_counter_smallbutton">150dp</dimen>
+    <dimen name="large_counter_margin">10dp</dimen>
+    <dimen name="large_counter_textsize">200sp</dimen>
+    
+    <dimen name="xlarge_counter_bigbutton">400dp</dimen>
+    <dimen name="xlarge_counter_smallbutton">200dp</dimen>
+    <dimen name="xlarge_counter_margin">50dp</dimen>
+    <dimen name="xlarge_counter_textsize">200sp</dimen>
+    <dimen name="xlarge_timer_width">255dp</dimen>
+    <dimen name="xlarge_timer_height">130dp</dimen>
+    <dimen name="xlarge_timer_textsize">100sp</dimen>
+    
+</resources>
