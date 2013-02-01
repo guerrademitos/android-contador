@@ -4,23 +4,33 @@
     <dimen name="small_counter_smallbutton">100dp</dimen>
     <dimen name="small_counter_margin">10dp</dimen>
     <dimen name="small_counter_textsize">100sp</dimen>
+    <dimen name="small_timer_textsize">100sp</dimen>
+    <dimen name="small_turn_textsize">40sp</dimen>
+    <dimen name="small_turn_imageview">40dp</dimen>
     
-    <dimen name="normal_counter_bigbutton">200dp</dimen>
-    <dimen name="normal_counter_smallbutton">100dp</dimen>
+    <dimen name="normal_counter_bigbutton">280dp</dimen>
+    <dimen name="normal_counter_smallbutton">90dp</dimen>
     <dimen name="normal_counter_margin">10dp</dimen>
     <dimen name="normal_counter_textsize">100sp</dimen>
+    <dimen name="normal_timer_textsize">40sp</dimen>
+    <dimen name="normal_turn_textsize">40sp</dimen>
+    <dimen name="normal_turn_imageview">40dp</dimen>
     
     <dimen name="large_counter_bigbutton">300dp</dimen>
     <dimen name="large_counter_smallbutton">150dp</dimen>
     <dimen name="large_counter_margin">10dp</dimen>
-    <dimen name="large_counter_textsize">200sp</dimen>
+    <dimen name="large_counter_textsize">180sp</dimen>
+    <dimen name="large_timer_textsize">60sp</dimen>
+    <dimen name="large_turn_textsize">40sp</dimen>
+    <dimen name="large_turn_imageview">50dp</dimen>
+    
     
     <dimen name="xlarge_counter_bigbutton">400dp</dimen>
     <dimen name="xlarge_counter_smallbutton">200dp</dimen>
     <dimen name="xlarge_counter_margin">50dp</dimen>
     <dimen name="xlarge_counter_textsize">200sp</dimen>
-    <dimen name="xlarge_timer_width">255dp</dimen>
-    <dimen name="xlarge_timer_height">130dp</dimen>
     <dimen name="xlarge_timer_textsize">100sp</dimen>
+    <dimen name="xlarge_turn_textsize">50sp</dimen>
+    <dimen name="xlarge_turn_imageview">70dp</dimen>
     
 </resources>

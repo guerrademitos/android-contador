@@ -42,6 +42,17 @@
                 android:background="@color/border_transparent"
                 android:gravity="center"
                 android:onClick="player1Up" />
+            
+            <ImageView
+                android:id="@+id/iv_player1"
+                android:layout_width="@dimen/normal_turn_imageview"
+                android:layout_height="@dimen/normal_turn_imageview"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp"
+                android:rotation="90"
+                android:src="@drawable/ic_player" />
+            
 
         </RelativeLayout>
 
@@ -76,8 +87,44 @@
                 android:gravity="center"
                 android:onClick="player2Up" >
             </RelativeLayout>
+            
+            <ImageView
+                android:id="@+id/iv_player2"
+                android:layout_width="@dimen/normal_turn_imageview"
+                android:layout_height="@dimen/normal_turn_imageview"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp"
+                android:rotation="-90"
+                android:src="@drawable/ic_player" />
 
         </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white_border2x"
+            android:text="40:00"
+            android:padding="10dp"
+            android:textSize="@dimen/normal_timer_textsize"
+            android:onClick="timerClick"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/tv_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rl_player1_down"
+            android:layout_centerHorizontal="true"
+            android:text="Turno"
+            android:padding="10dp"
+            android:background="@color/white_border2x"
+            android:textSize="@dimen/normal_turn_textsize"
+            android:onClick="changeMainPlayer"
+            android:clickable="true" />
 
     </RelativeLayout>
 
