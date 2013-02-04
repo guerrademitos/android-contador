@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:id="@+id/layout_counter"
     tools:context=".CounterActivity" >
     
     <RelativeLayout
@@ -126,6 +127,14 @@
             android:onClick="changeMainPlayer"
             android:clickable="true" />
 
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
     </RelativeLayout>
 
 </RelativeLayout>

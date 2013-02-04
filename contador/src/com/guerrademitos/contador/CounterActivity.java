@@ -1,16 +1,21 @@
 package com.guerrademitos.contador;
 
+import com.google.ads.*;
+import com.google.ads.AdRequest.ErrorCode;
 import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class CounterActivity extends Activity {
+public class CounterActivity extends Activity implements AdListener {
 
 	private TextView tv1, tv2, tv_timer;
 	
@@ -20,8 +25,12 @@ public class CounterActivity extends Activity {
 	
 	int turn;
 	ImageView iv1, iv2;
-	int VISIBLE = 0, GONE = 8;
+	
+	private AdView adView;
+	protected RelativeLayout layoutAd;
+	private InterstitialAd interstitial;
 		
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,8 +50,28 @@ public class CounterActivity extends Activity {
 		iv1 = (ImageView)findViewById(R.id.iv_player1);
 		iv2 = (ImageView)findViewById(R.id.iv_player2);
 		
-		iv1.setVisibility(VISIBLE);
-		iv2.setVisibility(GONE);
+		iv1.setVisibility(View.VISIBLE);
+		iv2.setVisibility(View.GONE);
+		
+		interstitial = new InterstitialAd(this,Utils.ADMOB_ID);
+		AdRequest adRequest = new AdRequest();
+		if (Utils.TEST_MODE){
+			adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
+			adRequest.addTestDevice("TEST_DEVICE_ID");
+		}
+		
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(this);
+		
+		
+	}
+	
+	@Override
+	public void onDestroy() {
+	    if (adView != null) {
+	      adView.destroy();
+	    }
+	    super.onDestroy();
 	}
 
 	@Override
@@ -96,12 +125,12 @@ public class CounterActivity extends Activity {
 	
 	public void changeMainPlayer(View v){
 		if(turn == 1){
-			iv1.setVisibility(GONE);
-			iv2.setVisibility(VISIBLE);
+			iv1.setVisibility(View.GONE);
+			iv2.setVisibility(View.VISIBLE);
 			turn = 2;
 		}else{
-			iv1.setVisibility(VISIBLE);
-			iv2.setVisibility(GONE);
+			iv1.setVisibility(View.VISIBLE);
+			iv2.setVisibility(View.GONE);
 			turn = 1;
 		}
 	}
@@ -138,5 +167,47 @@ public class CounterActivity extends Activity {
 		
 	}
 
+	@Override
+	public void onDismissScreen(Ad ad) {}
 
+	@Override
+	public void onFailedToReceiveAd(Ad ad, ErrorCode ecode) {
+		adView = new AdView(this, AdSize.SMART_BANNER, Utils.ADMOB_ID);
+		layoutAd = (RelativeLayout)findViewById(R.id.adView);
+		
+		adView.setAdListener(new AdListener() {
+			public void onReceiveAd(Ad ad){
+				layoutAd.setVisibility(View.VISIBLE);
+			}
+			public void onFailedToReceiveAd(Ad ad, AdRequest.ErrorCode error){
+				layoutAd.setVisibility(View.GONE);
+			}
+			public void onPresentScreen(Ad ad){}
+			public void onDismissScreen(Ad ad){}
+			public void onLeaveApplication(Ad ad){}
+		});
+
+		layoutAd.addView(adView);
+		AdRequest adRequest = new AdRequest();
+		if (Utils.TEST_MODE){
+			adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
+			adRequest.addTestDevice(Utils.ADMOB_DEVICE_ID);
+
+		}
+		adView.loadAd(adRequest);
+	}
+
+	@Override
+	public void onLeaveApplication(Ad ad) {}
+
+	@Override
+	public void onPresentScreen(Ad ad) {}
+
+	@Override
+	public void onReceiveAd(Ad ad) {
+		Log.d("OK", "Received ad");
+	    if (ad == interstitial) {
+	      interstitial.show();
+	    }
+	}
 }

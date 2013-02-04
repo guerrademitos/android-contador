@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout_counter"
     android:background="@drawable/background"
     tools:context=".CounterActivity" >
     
@@ -77,6 +78,14 @@
 
         </RelativeLayout>
 
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
     </RelativeLayout>
 
 </RelativeLayout>

@@ -8,6 +8,15 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 public class Utils {
+
+	public static boolean TEST_MODE = true;
+	
+	public static String ADMOB_ID = "a1510f7ece40291";
+	public static final String ADMOB_DEVICE_ID = "4767E077DE10B4A046C7DCEBF209E62A"; //BQ Edison
+	
+	public static String BUGSENSE_ID = "a1510f7ece40291";
+	
+	
 	
 	private static Context context;
 	
