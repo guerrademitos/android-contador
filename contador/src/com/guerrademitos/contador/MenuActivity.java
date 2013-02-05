@@ -16,6 +16,8 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		Utils.setFullScreen(MenuActivity.this);
 		setContentView(R.layout.activity_menu);
+		
+		overridePendingTransition(R.anim.rotation, R.anim.rotation);
 	}
 
 	@Override

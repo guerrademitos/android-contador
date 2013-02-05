@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		BugSenseHandler.initAndStartSession(getApplicationContext(), "8f2dfd22");
+		BugSenseHandler.initAndStartSession(getApplicationContext(), Utils.BUGSENSE_ID);
 		
 		Utils.setContext(getApplicationContext());
 		Utils.setFullScreen(MainActivity.this);
