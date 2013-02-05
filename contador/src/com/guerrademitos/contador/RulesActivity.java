@@ -1,36 +1,36 @@
 package com.guerrademitos.contador;
 
+import com.guerrademitos.contador.gestures.*;
 import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.view.Menu;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
-@SuppressLint("SetJavaScriptEnabled")
-public class RulesActivity extends Activity {
-
+public class RulesActivity extends Activity implements SwipeInterface {
+	
+	private int current_page = 1;
+	private int max_page = 16;
+	private ImageView image;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Utils.setFullScreen(this);
 		setContentView(R.layout.activity_rules);
 		
-		WebView wv = (WebView)findViewById(R.id.wv_rules); 
-        wv.getSettings().setJavaScriptEnabled(true);
-        
-        wv.setWebViewClient(new WebViewClient(){
-        	@Override
-        	public boolean shouldOverrideUrlLoading(WebView view, String url){
-        		return false;
-        	}
-        });
-        
-        String pdf = "http://joc.gegebe.com/wp-content/uploads/2013/01/REGLAS1.pdf";
-        wv.loadUrl("http://docs.google.com/gview?embedded=true&url=" + pdf);
+		image = (ImageView) findViewById(R.id.iv_rules);
+		
+		ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
+		RelativeLayout swipe_layout = (RelativeLayout) findViewById(R.id.rl_rules);
+		swipe_layout.setOnTouchListener(swipe);
+			
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,5 +38,58 @@ public class RulesActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_rules, menu);
 		return true;
 	}
+
+
+	@Override
+	public void bottom2top(View v) {
+		nextPage();
+	}
+
+
+	@Override
+	public void left2right(View v) {
+		prevPage();
+	}
+
+	@Override
+	public void right2left(View v) {	
+		nextPage();
+	}
+
+
+	@Override
+	public void top2bottom(View v) {
+		prevPage();
+	}
+	
+	private void prevPage() {
+		
+		current_page--;
+		
+		if(current_page < 1)
+			current_page = max_page;
+		
+		updateImage();
+	}
+
+	private void nextPage() {
+		
+		current_page++;
+		
+		if(current_page > max_page)
+			current_page = 1;
+		
+		updateImage();
+	}
+	
+	private void updateImage(){
+		
+		String uri = "@drawable/reglas"+current_page;
+		int imageResource = getResources().getIdentifier(uri, null, getPackageName());	
+		Drawable res = getResources().getDrawable(imageResource);
+		image.setImageDrawable(res);
+		
+	}
+	
 
 }
