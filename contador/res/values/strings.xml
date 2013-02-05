@@ -9,5 +9,7 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_counter">CounterActivity</string>
     <string name="title_activity_rules">RulesActivity</string>
+    
+    <string name="menu_reglas">Reglas</string>
 
 </resources>
