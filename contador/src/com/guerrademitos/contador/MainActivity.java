@@ -1,5 +1,7 @@
 package com.guerrademitos.contador;
 
+import com.bugsense.trace.BugSenseHandler;
+
 import com.guerrademitos.contador.utils.Utils;
 
 import android.app.Activity;
@@ -14,6 +16,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		BugSenseHandler.initAndStartSession(getApplicationContext(), "8f2dfd22");
 		
 		Utils.setContext(getApplicationContext());
 		Utils.setFullScreen(MainActivity.this);
