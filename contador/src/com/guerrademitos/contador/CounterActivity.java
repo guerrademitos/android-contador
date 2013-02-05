@@ -6,7 +6,6 @@ import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
@@ -30,7 +29,6 @@ public class CounterActivity extends Activity implements AdListener {
 	protected RelativeLayout layoutAd;
 	private InterstitialAd interstitial;
 		
-	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
