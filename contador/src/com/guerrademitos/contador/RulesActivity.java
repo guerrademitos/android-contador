@@ -1,34 +1,58 @@
 package com.guerrademitos.contador;
 
+import com.devspark.sidenavigation.ISideNavigationCallback;
+import com.devspark.sidenavigation.SideNavigationView;
 import com.guerrademitos.contador.gestures.*;
 import com.guerrademitos.contador.utils.Utils;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ViewFlipper;
 
-public class RulesActivity extends Activity implements SwipeInterface {
+public class RulesActivity extends Activity implements SwipeInterface,ISideNavigationCallback {
 	
-	private int current_page = 1;
-	private int max_page = 16;
-	private ImageView image;
+	private ViewFlipper flipper;
+	private SideNavigationView sideNavigationView;
+	
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Utils.setFullScreen(this);
 		setContentView(R.layout.activity_rules);
 		
-		image = (ImageView) findViewById(R.id.iv_rules);
+		//Visor
+		flipper = (ViewFlipper) findViewById(R.id.flipper);
+		flipper.setInAnimation(getApplicationContext(),R.anim.push_left_in);
+		flipper.setOutAnimation(getApplicationContext(),R.anim.push_left_out);
 		
 		ActivitySwipeDetector swipe = new ActivitySwipeDetector(this);
 		RelativeLayout swipe_layout = (RelativeLayout) findViewById(R.id.rl_rules);
-		swipe_layout.setOnTouchListener(swipe);
-			
+		swipe_layout.setOnTouchListener(swipe);		
+		
+		//Menu lateral
+		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_rules);
+	    sideNavigationView.setMenuItems(R.menu.menu_rules);
+	    sideNavigationView.setMenuClickCallback(this);
+	    sideNavigationView.setMode(SideNavigationView.Mode.LEFT);
+	    
+	    //Abrirlo con slide
+	    RelativeLayout swipe_menu = (RelativeLayout)findViewById(R.id.rl_slide_index);
+	    swipe_menu.setOnTouchListener(new ActivitySwipeDetector(new SwipeInterface() {
+			@Override
+			public void left2right(View v) {
+				sideNavigationView.showMenu();
+			}
+			@Override
+			public void bottom2top(View v) {}
+			@Override
+			public void right2left(View v) {}
+			@Override
+			public void top2bottom(View v) {}
+		}){});
 	}
 	
 
@@ -42,54 +66,52 @@ public class RulesActivity extends Activity implements SwipeInterface {
 
 	@Override
 	public void bottom2top(View v) {
-		nextPage();
 	}
 
 
 	@Override
 	public void left2right(View v) {
-		prevPage();
+		flipper.setInAnimation(getApplicationContext(),R.anim.push_right_in);
+		flipper.setOutAnimation(getApplicationContext(),R.anim.push_right_out);
+		flipper.showPrevious();
 	}
 
 	@Override
 	public void right2left(View v) {	
-		nextPage();
+		flipper.setInAnimation(getApplicationContext(),R.anim.push_left_in);
+		flipper.setOutAnimation(getApplicationContext(),R.anim.push_left_out);
+		flipper.showNext();
 	}
 
 
 	@Override
 	public void top2bottom(View v) {
-		prevPage();
-	}
-	
-	private void prevPage() {
-		
-		current_page--;
-		
-		if(current_page < 1)
-			current_page = max_page;
-		
-		updateImage();
 	}
 
-	private void nextPage() {
-		
-		current_page++;
-		
-		if(current_page > max_page)
-			current_page = 1;
-		
-		updateImage();
-	}
-	
-	private void updateImage(){
-		
-		String uri = "@drawable/reglas"+current_page;
-		int imageResource = getResources().getIdentifier(uri, null, getPackageName());	
-		Drawable res = getResources().getDrawable(imageResource);
-		image.setImageDrawable(res);
-		
-	}
-	
 
+	@Override
+	public void onSideNavigationItemClick(int itemId) {
+		switch (itemId) {
+		case R.id.side_intro:
+			flipper.setDisplayedChild(0);
+			break;
+		case R.id.side_reglasbasicas:
+			flipper.setDisplayedChild(1);
+			break;
+
+		default:
+			sideNavigationView.hideMenu();
+			break;
+		}
+		
+	}
+	
+	@Override
+	public void onBackPressed(){
+		if(sideNavigationView.isShown())
+			sideNavigationView.hideMenu();
+		else
+			super.onBackPressed();
+		
+	}
 }
