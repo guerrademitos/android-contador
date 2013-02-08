@@ -4,24 +4,25 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/tv_counter"
+        android:id="@+id/tv_prefs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/ic_counter"
         android:layout_marginLeft="16dp"
-        android:text="Reglas*"
+        android:layout_marginTop="50dp"
+        android:text="Configuración"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFF"
         android:textSize="30sp" />
 
     <ImageView
-        android:id="@+id/ic_counter"
+        android:id="@+id/ic_prefs"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignLeft="@+id/tv_counter"
+        android:layout_alignLeft="@+id/tv_prefs"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="21dp"
-        android:src="@drawable/ic_rules" />
+        android:layout_marginLeft="71dp"
+        android:src="@drawable/ic_prefs" />
 
 </RelativeLayout>

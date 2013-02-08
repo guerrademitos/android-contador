@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_reglas02_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:text="Reglas básicas"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_reglas01_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas02_titulo"
+        android:layout_below="@+id/tv_reglas02_titulo"
+        android:layout_marginTop="19dp"
+        android:text="Si una carta contradice las reglas, tiene prioridad la carta.\n\nNo se puede jugar ninguna acción si no se pueden pagar los costes o la carta está cansada.\n\n(Carta cansada: Posición horizontal)\n\nLas habilidades de cartas solo se pueden usar una vez por turno."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

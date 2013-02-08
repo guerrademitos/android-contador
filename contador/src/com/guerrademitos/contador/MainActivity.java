@@ -23,6 +23,8 @@ public class MainActivity extends Activity {
 
 		setContentView(R.layout.activity_main);
 		
+		Utils.setSelectedBackground(findViewById(R.id.bgsplash));
+		
 		final int millis = 3000;
 		Thread splash = new Thread(){
 			int wait = 0;

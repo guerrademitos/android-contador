@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="General">
+        <ListPreference 
+            android:key="app_background"
+            android:title="Fondo de pantalla"
+            android:summary="Personaliza tu fondo de pantalla"
+            android:dialogTitle="Fondo de pantalla"
+            android:entries="@array/background"
+            android:entryValues="@array/background_values"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:id="@+id/layout_counter"
+    android:id="@+id/rl_bg_counter"
+    android:background="@color/black_overlay"
     tools:context=".CounterActivity" >
     
     <RelativeLayout
@@ -22,6 +22,13 @@
             android:layout_marginLeft="@dimen/large_counter_margin"
             android:onClick="player1Down"
             android:background="@color/border" >
+            
+            <RelativeLayout
+                android:id="@+id/c_bg_player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/white_overlay" />
 
             <TextView
                 android:id="@+id/tv_player1"
@@ -52,6 +59,24 @@
                 android:layout_marginTop="54dp"
                 android:rotation="90"
                 android:src="@drawable/ic_player" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_prefs_player1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:onClick="changeBgPlayer"
+                android:layout_marginRight="1dp" >
+
+                <ImageView
+                    android:id="@+id/iv_prefs_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:src="@drawable/ic_prefs_small" />
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -65,6 +90,14 @@
             android:onClick="player2Down"
             android:background="@color/border" >
 
+            <RelativeLayout
+                android:id="@+id/c_bg_player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/white_overlay"
+                android:rotation="180" />
+            
             <TextView
                 android:id="@+id/tv_player2"
                 android:layout_width="wrap_content"
@@ -95,6 +128,23 @@
                 android:layout_marginTop="54dp"
                 android:rotation="-90"
                 android:src="@drawable/ic_player" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_prefs_player2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:onClick="changeBgPlayer" >
+
+                <ImageView
+                    android:id="@+id/iv_prefs_player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:src="@drawable/ic_prefs_small" />
+            </RelativeLayout>
 
         </RelativeLayout>
         

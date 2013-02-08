@@ -2,6 +2,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/bgsplash"
-        android:background="@drawable/background" >
+        android:background="@color/black_overlay" >
 
 </RelativeLayout>

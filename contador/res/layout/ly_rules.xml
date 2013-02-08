@@ -10,7 +10,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/ic_counter"
         android:layout_marginLeft="16dp"
-        android:text="Reglas*"
+        android:text="@string/menu_reglas"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFF"
         android:textSize="30sp" />
