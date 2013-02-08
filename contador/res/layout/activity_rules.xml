@@ -2,13 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rl_rules"
     tools:context=".RulesActivity" >
 
-    <WebView
-        android:id="@+id/wv_rules"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="20dp"
         android:layout_height="match_parent"
+        android:id="@+id/rl_slide_index" >
+    </RelativeLayout>
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true" >
+        
+        <include layout="@layout/rules_01"/>
+        <include layout="@layout/rules_02"/>
+		     
+    </ViewFlipper>
+   
+    
+    <com.devspark.sidenavigation.SideNavigationView
+        android:id="@+id/side_navigation_rules"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.devspark.sidenavigation.SideNavigationView>
+
+    
 
 </RelativeLayout>

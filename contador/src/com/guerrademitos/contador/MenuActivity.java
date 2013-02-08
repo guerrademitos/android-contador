@@ -3,7 +3,6 @@ package com.guerrademitos.contador;
 import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -33,7 +32,6 @@ public class MenuActivity extends Activity {
 		startActivity(i);
 	}
 	
-	@SuppressLint("SetJavaScriptEnabled")
 	public void openRules(View v){
 		Intent i = new Intent(MenuActivity.this,RulesActivity.class);
 		startActivity(i);		
