@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:alpha="0.5"
-                android:background="@drawable/c_bg_niflheim" />
+                android:background="@color/white_overlay" />
 
             <TextView
                 android:id="@+id/tv_player1"
@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:alpha="0.5"
-                android:background="@drawable/c_bg_takanamara"
+                android:background="@color/white_overlay"
                 android:rotation="180" />
 
             <TextView
