@@ -50,6 +50,7 @@ public class Utils {
 		context.startActivity(i);
 	}
 	
+	@SuppressWarnings("deprecation")
 	public static void setSelectedBackground(View v){
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		String bg_resource = sharedPref.getString("app_background","bg_fuego");
