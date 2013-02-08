@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string-array name="background">
+      <item>GdM Fuego</item>
+      <item>Odin</item>
+      <item>Ame-no-mi-Kumari</item>
+   </string-array>
+   <string-array name="background_values">
+      <item>bg_fuego</item>
+      <item>bg_odin</item>
+      <item>bg_amenomi</item>
+   </string-array>
+   <string-array name="pantheons">
+      <item>[JAP] Takanamara</item>
+      <item>[JAP] Yomi</item>
+      <item>[NOR] Niflheim</item>
+   </string-array>
+</resources>

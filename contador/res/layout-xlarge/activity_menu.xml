@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:id="@+id/rl_bg_menu"
+    android:background="@color/black_overlay"
     tools:context=".MenuActivity" >
 
     <RelativeLayout
@@ -37,6 +38,21 @@
 
             <include layout="@layout/ly_rules" />
         </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/rl_prefs"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="376dp"
+            android:layout_marginTop="50dp"
+            android:onClick="openPrefs" >
+
+            <include layout="@layout/ly_prefs" />
+        </RelativeLayout>
+        
+        
     </RelativeLayout>
 
 </RelativeLayout>

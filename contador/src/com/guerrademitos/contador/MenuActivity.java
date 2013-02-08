@@ -16,6 +16,9 @@ public class MenuActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		Utils.setFullScreen(MenuActivity.this);
 		setContentView(R.layout.activity_menu);
+		
+		Utils.setSelectedBackground(findViewById(R.id.rl_bg_menu));
+
 	}
 
 	@Override
@@ -34,6 +37,11 @@ public class MenuActivity extends Activity {
 	public void openRules(View v){
 		Intent i = new Intent(MenuActivity.this,RulesActivity.class);
 		startActivity(i);		
+	}
+	
+	public void openPrefs(View v){
+		Intent i = new Intent(MenuActivity.this,SettingsActivity.class);
+		startActivity(i);
 	}
 
 }

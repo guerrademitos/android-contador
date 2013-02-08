@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:id="@+id/rl_bg_counter"
+    android:background="@color/black_overlay"
     tools:context=".CounterActivity" >
     
     <RelativeLayout
@@ -17,10 +18,19 @@
             android:layout_width="200dp"
             android:layout_height="550dp"
             android:layout_alignParentLeft="true"
+            android:layout_below="@id/rl_player1_down"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:onClick="player1Down"
-            android:background="@color/border" >
+            android:background="@color/border"
+            android:onClick="player1Down" >
+
+            <ImageView
+                android:id="@+id/c_bg_player1"
+                android:layout_width="200dp"
+                android:layout_height="500dp"
+                android:rotation="90"
+                android:alpha="0.5"
+                android:src="@drawable/c_bg_niflheim" />
 
             <TextView
                 android:id="@+id/tv_player1"
@@ -41,7 +51,9 @@
                 android:layout_alignParentTop="true"
                 android:background="@color/border_transparent"
                 android:gravity="center"
-                android:onClick="player1Up" />
+                android:onClick="player1Up" >
+
+            </RelativeLayout>
             
             <ImageView
                 android:id="@+id/iv_player1"
@@ -52,7 +64,6 @@
                 android:layout_marginTop="54dp"
                 android:rotation="90"
                 android:src="@drawable/ic_player" />
-            
 
         </RelativeLayout>
 
@@ -86,6 +97,7 @@
                 android:background="@color/border_transparent"
                 android:gravity="center"
                 android:onClick="player2Up" >
+
             </RelativeLayout>
             
             <ImageView

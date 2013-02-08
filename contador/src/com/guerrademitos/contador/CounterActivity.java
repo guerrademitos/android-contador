@@ -4,13 +4,19 @@ import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.app.Activity;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class CounterActivity extends Activity {
+public class CounterActivity extends FragmentActivity {
 
 	private TextView tv1, tv2, tv_timer;
 	
@@ -21,12 +27,17 @@ public class CounterActivity extends Activity {
 	int turn;
 	ImageView iv1, iv2;
 	int VISIBLE = 0, GONE = 8;
+	
+	RelativeLayout rl = null;
+	TextView rltv = null;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Utils.setFullScreen(this);
 		setContentView(R.layout.activity_counter);
+		
+		Utils.setSelectedBackground(findViewById(R.id.rl_bg_counter));
 		
 		tv1 = (TextView)findViewById(R.id.tv_player1);
 		tv2 = (TextView)findViewById(R.id.tv_player2);
@@ -134,8 +145,60 @@ public class CounterActivity extends Activity {
 		public void onTick(long millisUntilFinished) {
 			tv_timer.setText(millisToTime(millisUntilFinished));
 			millisLeft = millisUntilFinished;
-		}
+		}	
+	}
+	
+	
+	// Background
+	public void changeBgPlayer(View v){
 		
+		if(v.getId() == R.id.rl_prefs_player1){
+			rl = (RelativeLayout)findViewById(R.id.c_bg_player1);
+			rltv = (TextView)findViewById(R.id.tv_player1);
+		}
+		else if(v.getId() == R.id.rl_prefs_player2){
+			rl = (RelativeLayout)findViewById(R.id.c_bg_player2);
+			rltv = (TextView)findViewById(R.id.tv_player2);
+		}
+		else return;
+		
+		DialogFragment dialog = new SelectBackgroundDialogFragment();
+		dialog.show(getSupportFragmentManager(), "Select Background");
+	}
+	
+	public void changeBg(int resId){
+		
+	}
+	
+	
+	
+	@SuppressLint("ValidFragment")
+	public class SelectBackgroundDialogFragment extends DialogFragment {
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+	        // Use the Builder class for convenient dialog construction
+	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+	        builder.setTitle("Selecciona tu pante—n.")
+	        		.setItems(R.array.pantheons, new DialogInterface.OnClickListener() {
+	                    public void onClick(DialogInterface dialog, int which) {
+	                        // The 'which' argument contains the index position of the selected item
+	                    	switch(which){
+	                    		case 0: //Takanamara
+	                    			rl.setBackgroundResource(R.drawable.c_bg_takanamara);
+	                    			rltv.setText("18");
+	                    			break;
+	                    		case 1:	//Yomi
+	                    			break;
+	                    		case 2: //Niflheim
+	                    			rl.setBackgroundResource(R.drawable.c_bg_niflheim);
+	                    			rltv.setText("20");
+	                    			break;
+	                    	}
+	                    }
+	                 });
+	        // Create the AlertDialog object and return it
+	        return builder.create();
+	    }
 	}
 
 
