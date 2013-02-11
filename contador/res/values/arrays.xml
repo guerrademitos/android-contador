@@ -11,8 +11,9 @@
       <item>bg_amenomi</item>
    </string-array>
    <string-array name="pantheons">
-      <item>[JAP] Takanamara</item>
+      <item>[JAP] Takanamahara</item>
       <item>[JAP] Yomi</item>
+      <item>[NOR] Niflheim</item>
       <item>[NOR] Niflheim</item>
    </string-array>
 </resources>
