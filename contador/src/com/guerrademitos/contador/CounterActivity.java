@@ -4,6 +4,7 @@ import com.google.ads.*;
 import com.google.ads.AdRequest.ErrorCode;
 import com.guerrademitos.contador.utils.Utils;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -188,7 +190,7 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		}
 		else return;
 		
-		DialogFragment dialog = new SelectBackgroundDialogFragment();
+		DialogFragment dialog = new BuyItDialogFragment();
 		dialog.show(getSupportFragmentManager(), "Select Background");
 	}
 	
@@ -199,32 +201,32 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 	
 	
 	@SuppressLint("ValidFragment")
-	public class SelectBackgroundDialogFragment extends DialogFragment {
-	    @Override
-	    public Dialog onCreateDialog(Bundle savedInstanceState) {
-	        // Use the Builder class for convenient dialog construction
-	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-	        builder.setTitle("Selecciona tu pante—n.")
-	        		.setItems(R.array.pantheons, new DialogInterface.OnClickListener() {
-	                    public void onClick(DialogInterface dialog, int which) {
-	                        // The 'which' argument contains the index position of the selected item
-	                    	switch(which){
-	                    		case 0: //Takanamara
-	                    			rl.setBackgroundResource(R.drawable.c_bg_takanamara);
-	                    			rltv.setText("18");
-	                    			break;
-	                    		case 1:	//Yomi
-	                    			break;
-	                    		case 2: //Niflheim
-	                    			rl.setBackgroundResource(R.drawable.c_bg_niflheim);
-	                    			rltv.setText("20");
-	                    			break;
-	                    	}
-	                    }
-	                 });
-	        // Create the AlertDialog object and return it
-	        return builder.create();
-	    }
+	public class BuyItDialogFragment extends DialogFragment{
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstance){
+			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			
+			builder.setMessage(R.string.buyit)
+				   .setPositiveButton(R.string.buy, new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       //Open store
+	                	   
+	                	   try {
+	                		    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Utils.APP_NAME)));
+	                		} catch (android.content.ActivityNotFoundException anfe) {
+	                		    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id="+Utils.APP_NAME)));
+	                		}
+	                	   
+	                   }
+	               })
+				   .setNegativeButton(R.string.later, new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       // User cancelled the dialog
+	                   }
+	               });
+			
+			return builder.create();
+		}
 	}
 
 	@Override
