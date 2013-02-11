@@ -183,8 +183,8 @@ public class CounterActivity extends FragmentActivity {
 	                    public void onClick(DialogInterface dialog, int which) {
 	                        // The 'which' argument contains the index position of the selected item
 	                    	switch(which){
-	                    		case 0: //Takanamara
-	                    			rl.setBackgroundResource(R.drawable.c_bg_takanamara);
+	                    		case 0: //Takanamahara
+	                    			rl.setBackgroundResource(R.drawable.c_bg_takanamahara);
 	                    			rltv.setText("18");
 	                    			break;
 	                    		case 1:	//Yomi

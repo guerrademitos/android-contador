@@ -28,7 +28,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:alpha="0.5"
-                android:background="@color/white_overlay" />
+                android:background="@color/white_overlay" >
+
+                <RelativeLayout
+                    android:id="@+id/tv_player1_up"
+                    android:layout_width="@dimen/xlarge_counter_smallbutton"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/border_transparent"
+                    android:onClick="player1Up" >
+                </RelativeLayout>
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_player1"
@@ -40,14 +52,6 @@
                 android:text="20"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="@dimen/xlarge_counter_textsize" />
-
-            <RelativeLayout
-                android:id="@+id/tv_player1_up"
-                android:layout_width="@dimen/xlarge_counter_smallbutton"
-                android:layout_height="fill_parent"
-                android:background="@color/border_transparent"
-                android:onClick="player1Up" >
-            </RelativeLayout>
 
             <ImageView
                 android:id="@+id/iv_player1"
