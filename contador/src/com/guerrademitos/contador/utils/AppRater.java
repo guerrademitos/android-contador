@@ -1,5 +1,6 @@
 package com.guerrademitos.contador.utils;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -9,11 +10,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
 
 public class AppRater {
     
@@ -45,7 +42,7 @@ public class AppRater {
             if (System.currentTimeMillis() >= date_firstLaunch + 
                     (DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000)) {
             	DialogFragment dialog = new RateDialogFragment1();
-    			dialog.show(getSupportFragmentManager(), "Select Background");
+    			dialog.show(((FragmentActivity) mContext).getSupportFragmentManager(), "Select Background");
             }
         }
         
@@ -60,7 +57,8 @@ public class AppRater {
         }
     }
     
-    public class RateDialogFragment1 extends DialogFragment{
+    @SuppressLint("ValidFragment")
+	public class RateDialogFragment1 extends DialogFragment{
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstance){
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -95,3 +93,4 @@ public class AppRater {
 		}
 	}
 }
+
