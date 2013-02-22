@@ -1,6 +1,6 @@
 package com.guerrademitos.contador;
 
-import com.guerrademitos.contador.utils.AppRater;
+import com.guerrademitos.contador.apprater.AppRater;
 import com.guerrademitos.contador.utils.Utils;
 
 import android.net.Uri;
@@ -26,8 +26,7 @@ public class MenuActivity extends FragmentActivity {
 		overridePendingTransition(R.anim.rotation, R.anim.rotation);
 		Utils.setSelectedBackground(findViewById(R.id.rl_bg_menu));
 		
-		AppRater.showRateDialog(this, null);
-
+		AppRater.app_launched(this);
 	}
 
 	@Override
@@ -81,5 +80,4 @@ public class MenuActivity extends FragmentActivity {
 			return builder.create();
 		}
 	}
-
 }
