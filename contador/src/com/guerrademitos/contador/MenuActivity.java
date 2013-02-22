@@ -1,5 +1,6 @@
 package com.guerrademitos.contador;
 
+import com.guerrademitos.contador.utils.AppRater;
 import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
@@ -17,6 +18,8 @@ public class MenuActivity extends Activity {
 		setContentView(R.layout.activity_menu);
 		
 		Utils.setSelectedBackground(findViewById(R.id.rl_bg_menu));
+		
+		AppRater.showRateDialog(this, null);
 
 	}
 
