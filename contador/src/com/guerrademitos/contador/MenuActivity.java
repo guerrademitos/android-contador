@@ -1,15 +1,15 @@
 package com.guerrademitos.contador;
 
-import com.guerrademitos.contador.utils.AppRater;
+import com.guerrademitos.contador.apprater.AppRater;
 import com.guerrademitos.contador.utils.Utils;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 
-public class MenuActivity extends Activity {
+public class MenuActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,7 @@ public class MenuActivity extends Activity {
 		
 		Utils.setSelectedBackground(findViewById(R.id.rl_bg_menu));
 		
-		AppRater.showRateDialog(this, null);
-
+		AppRater.app_launched(this);
 	}
 
 	@Override
@@ -44,5 +43,4 @@ public class MenuActivity extends Activity {
 		Intent i = new Intent(MenuActivity.this,SettingsActivity.class);
 		startActivity(i);
 	}
-
 }
