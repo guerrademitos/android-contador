@@ -37,6 +37,9 @@ public class CounterActivity extends FragmentActivity {
 		Utils.setFullScreen(this);
 		setContentView(R.layout.activity_counter);
 		
+		//Que no se apague la pantalla
+		Utils.keepAlive(this);
+		
 		Utils.setSelectedBackground(findViewById(R.id.rl_bg_counter));
 		
 		tv1 = (TextView)findViewById(R.id.tv_player1);
