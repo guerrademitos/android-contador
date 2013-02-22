@@ -55,6 +55,10 @@ public class RulesActivity extends Activity implements SwipeInterface,ISideNavig
 		}){});
 	}
 	
+	public void hideHelp(View v){
+		v.setVisibility(View.GONE);
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

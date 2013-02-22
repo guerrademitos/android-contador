@@ -26,6 +26,8 @@ public class Utils {
 	
 	
 	
+	private static String APP_URL = "";
+	
 	private static Context context;
 	
 	public static void setContext(Context applicationContext) {
@@ -56,6 +58,10 @@ public class Utils {
 													  WindowManager.LayoutParams.FLAG_FULLSCREEN); 
 	}
 	
+	public static void keepAlive(Context currContext){
+		((Activity) currContext).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+	}
+	
 	public static void restart(){
 		Intent i = context.getPackageManager().getLaunchIntentForPackage( context.getPackageName() );
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -72,6 +78,30 @@ public class Utils {
 	    Drawable image = context.getResources().getDrawable(imageResource);
 		
 		v.setBackgroundDrawable(image);																								
+	}
+
+	public static void countUsage() {
+		
+		SharedPreferences prefs =  context.getSharedPreferences("Usage",Context.MODE_PRIVATE);
+		int usage = prefs.getInt("timesUsed", 0);
+		
+		SharedPreferences.Editor editor = prefs.edit();
+		editor.putInt("timesUsed", ++usage);
+		editor.commit();
+	}
+	
+
+	public static void showRateMeIfNeeded(){
+		
+		SharedPreferences prefs =  context.getSharedPreferences("Usage",Context.MODE_PRIVATE);
+		boolean never = prefs.getBoolean("neverAgain", false);
+		int usage = prefs.getInt("timesUsed", 0);
+		
+		if(!never){ //Si no quieren que les molestemos m‡s...
+			if(usage == 10){
+				
+			}
+		}
 	}
 
 }
