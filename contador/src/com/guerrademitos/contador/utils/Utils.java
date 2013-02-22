@@ -26,7 +26,9 @@ public class Utils {
 	
 	
 	
-	private static String APP_URL = "";
+	public static String APP_TITLE = "Guerra de Mitos - Contador";
+	//public static String APP_NAME = "com.guerrademitos.contador";
+	public static String APP_NAME = "com.rovio.angrybirds";
 	
 	private static Context context;
 	
@@ -78,30 +80,6 @@ public class Utils {
 	    Drawable image = context.getResources().getDrawable(imageResource);
 		
 		v.setBackgroundDrawable(image);																								
-	}
-
-	public static void countUsage() {
-		
-		SharedPreferences prefs =  context.getSharedPreferences("Usage",Context.MODE_PRIVATE);
-		int usage = prefs.getInt("timesUsed", 0);
-		
-		SharedPreferences.Editor editor = prefs.edit();
-		editor.putInt("timesUsed", ++usage);
-		editor.commit();
-	}
-	
-
-	public static void showRateMeIfNeeded(){
-		
-		SharedPreferences prefs =  context.getSharedPreferences("Usage",Context.MODE_PRIVATE);
-		boolean never = prefs.getBoolean("neverAgain", false);
-		int usage = prefs.getInt("timesUsed", 0);
-		
-		if(!never){ //Si no quieren que les molestemos m‡s...
-			if(usage == 10){
-				
-			}
-		}
 	}
 
 }
