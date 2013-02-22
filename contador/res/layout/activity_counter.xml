@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:alpha="0.5"
+                    android:alpha="0.7"
                     android:src="@drawable/ic_prefs_small" />
             </RelativeLayout>
 
@@ -148,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:alpha="0.5"
+                    android:alpha="0.7"
                     android:src="@drawable/ic_prefs_small" />
             </RelativeLayout>
 

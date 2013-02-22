@@ -169,11 +169,6 @@ public class CounterActivity extends FragmentActivity {
 		dialog.show(getSupportFragmentManager(), "Select Background");
 	}
 	
-	public void changeBg(int resId){
-		
-	}
-	
-	
 	
 	@SuppressLint("ValidFragment")
 	public class SelectBackgroundDialogFragment extends DialogFragment {
