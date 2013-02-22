@@ -1,10 +1,14 @@
 package com.guerrademitos.contador.utils;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,11 +20,14 @@ public class AppRater {
     private final static int DAYS_UNTIL_PROMPT = 3;
     private final static int LAUNCHES_UNTIL_PROMPT = 7;
     
+    static SharedPreferences prefs;
+    static SharedPreferences.Editor editor;
+    
     public static void app_launched(Context mContext) {
-        SharedPreferences prefs = mContext.getSharedPreferences("apprater", 0);
+        prefs = mContext.getSharedPreferences("apprater", 0);
         if (prefs.getBoolean("dontshowagain", false)) { return ; }
         
-        SharedPreferences.Editor editor = prefs.edit();
+        editor = prefs.edit();
         
         // Increment launch counter
         long launch_count = prefs.getLong("launch_count", 0) + 1;
@@ -37,60 +44,54 @@ public class AppRater {
         if (launch_count >= LAUNCHES_UNTIL_PROMPT) {
             if (System.currentTimeMillis() >= date_firstLaunch + 
                     (DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000)) {
-                showRateDialog(mContext, editor);
+            	DialogFragment dialog = new RateDialogFragment1();
+    			dialog.show(getSupportFragmentManager(), "Select Background");
             }
         }
         
         editor.commit();
-    }   
-    
-    public static void showRateDialog(final Context mContext, final SharedPreferences.Editor editor) {
-        final Dialog dialog = new Dialog(mContext);
-        dialog.setTitle("Rate " + Utils.APP_TITLE);
-
-        LinearLayout ll = new LinearLayout(mContext);
-        ll.setOrientation(LinearLayout.VERTICAL);
-        
-        TextView tv = new TextView(mContext);
-        tv.setText("If you enjoy using " + Utils.APP_TITLE + ", please take a moment to rate it. Thanks for your support!");
-        tv.setWidth(240);
-        tv.setPadding(4, 0, 4, 10);
-        ll.addView(tv);
-        
-        Button b1 = new Button(mContext);
-        b1.setText("Rate " + Utils.APP_TITLE);
-        b1.setOnClickListener(new OnClickListener() {
-        	@Override
-        	public void onClick(View v) {
-                mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Utils.APP_NAME)));
-                dialog.dismiss();
-            }
-        });        
-        ll.addView(b1);
-
-        Button b2 = new Button(mContext);
-        b2.setText("Remind me later");
-        b2.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        ll.addView(b2);
-
-        Button b3 = new Button(mContext);
-        b3.setText("No, thanks");
-        b3.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                if (editor != null) {
-                    editor.putBoolean("dontshowagain", true);
-                    editor.commit();
-                }
-                dialog.dismiss();
-            }
-        });
-        ll.addView(b3);
-
-        dialog.setContentView(ll);        
-        dialog.show();        
     }
+    
+    public static void dontBotherAgain(){
+    	
+ 	   if (editor != null) {
+            editor.putBoolean("dontshowagain", true);
+            editor.commit();
+        }
+    }
+    
+    public class RateDialogFragment1 extends DialogFragment{
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstance){
+			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+			builder.setMessage("If you enjoy using " + Utils.APP_TITLE + ", please take a moment to rate it. Thanks for your support!")
+				   .setPositiveButton("Valorar!", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       //Open store
+	                	   try {
+	                		    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Utils.APP_NAME)));
+	                		} catch (android.content.ActivityNotFoundException anfe) {
+	                		    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id="+Utils.APP_NAME)));
+	                		}
+
+	                   }
+	               })
+				   .setNeutralButton("Quiz‡ luego", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       // User cancelled the dialog
+	                	   dialog.dismiss();
+	                   }
+	               })
+	               .setNegativeButton("Nunca", new DialogInterface.OnClickListener() {
+	                   public void onClick(DialogInterface dialog, int id) {
+	                       // No molestar m‡s
+	                	   AppRater.dontBotherAgain();
+	                       dialog.dismiss();
+	                   }
+	               });
+
+			return builder.create();
+		}
+	}
 }
