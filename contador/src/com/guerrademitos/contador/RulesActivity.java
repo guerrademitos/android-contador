@@ -96,10 +96,10 @@ public class RulesActivity extends Activity implements SwipeInterface,ISideNavig
 	@Override
 	public void onSideNavigationItemClick(int itemId) {
 		switch (itemId) {
-		case R.id.side_intro:
+		case R.id.side_componentes:
 			flipper.setDisplayedChild(0);
 			break;
-		case R.id.side_reglasbasicas:
+		case R.id.side_objetivos:
 			flipper.setDisplayedChild(1);
 			break;
 
