@@ -39,7 +39,8 @@
         </activity>
         <activity
             android:name="com.guerrademitos.contador.RulesActivity"
-            android:label="@string/title_activity_rules">
+            android:label="@string/title_activity_rules"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.guerrademitos.contador.SettingsActivity"
