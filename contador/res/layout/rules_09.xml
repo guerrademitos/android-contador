@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_reglas01_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:text="Introducción"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:id="@+id/scroll_rules01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas01_titulo"
+        android:layout_below="@+id/tv_reglas01_titulo"
+        android:layout_marginTop="19dp" >
+
+        <RelativeLayout
+            android:id="@+id/rl_reglas01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_reglas01_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Guerra de Mitos es un juego de estrategia para dos o más jugadores, que se enfrentan para decidir el destino de una mitología.
+Cada jugador dispone de un mazo de Dioses (personajes, eventos y recursos) con los cuales defenderá y ostentará el poder para su Mitología y un mazo de Designios (acciones, invocaciones y equipos) con tácticas con las que sus Dioses podrán conquistar la victoria.
+Los juegos de estrategia de cartas combinan estrategia y colección, podrás diseñar, armar y componer tu Mitología de una forma exclusiva. 
+Empieza la colección y con cada expansión podrás mejorar tus mazosy/o hacer otros nuevos.
+
+¿Te atreves a jugar?"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -18,7 +18,7 @@ public class RateDialogFragment1 extends DialogFragment{
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		
 		builder.setTitle("Valora Guerra de Mitos - Contador");
-		builder.setMessage("ÀTe gusta Guerra de Mitos? Ayœdanos valorando la aplicaci—n. No te olvides de opinar :) ÁGracias por tu apoyo!")
+		builder.setMessage("Â¿Te gusta Guerra de Mitos? AyÃºdanos valorando la aplicaciÃ³n. No te olvides de opinar :) Â¡Gracias por tu apoyo!")
 			   .setPositiveButton("Valorar!", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                        //Open store
@@ -30,7 +30,7 @@ public class RateDialogFragment1 extends DialogFragment{
                 	   	AppRater.dontBotherAgain();
                    }
                })
-			   .setNeutralButton("Quiz‡ luego", new DialogInterface.OnClickListener() {
+			   .setNeutralButton("QuizÃ¡ luego", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                        // User cancelled the dialog
                 	   dialog.dismiss();
@@ -38,7 +38,7 @@ public class RateDialogFragment1 extends DialogFragment{
                })
                .setNegativeButton("Nunca", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
-                       // No molestar m‡s
+                       // No molestar mÃ¡s
                 	   AppRater.dontBotherAgain();
                        dialog.dismiss();
                    }

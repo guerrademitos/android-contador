@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
     <item
-        android:id="@+id/side_intro"
-        android:title="Introducción"/>
+        android:id="@+id/side_componentes"
+        android:title="Componentes"/>
+ 	<item
+        android:id="@+id/side_objetivos"
+        android:title="Objetivos"/>
     <item
-        android:id="@+id/side_reglasbasicas"
-        android:title="Reglas básicas"/>
-    <item
-        android:id="@+id/side_navigation_menu_item3"
-        android:title="Tipos de carta"/>
-    <item
-        android:id="@+id/side_navigation_menu_item4"
-        android:title="Construcción de mazos"/>
-    <item
-        android:id="@+id/side_navigation_menu_item5"
+        android:id="@+id/side_zonas_juego"
         android:title="Zonas de juego"/>
     <item
-        android:id="@+id/side_navigation_menu_item6"
+        android:id="@+id/side_golden_rule"
+        android:title="Las 'Golden Rule'"/>
+    <item
+        android:id="@+id/side_habilidades"
+        android:title="Habilidades"/>
+    <item
+        android:id="@+id/side_reglas2jugadores"
         android:title="Reglas 2 jugadores"/>
     <item
-        android:id="@+id/side_navigation_menu_item7"
-        android:title="Reglas multiplayer"/>
+        android:id="@+id/side_reglas_multi"
+        android:title="Reglas multijugador"/>
     <item
-        android:id="@+id/side_navigation_menu_item8"
-        android:title="Fases del juego"/>
-    <item
-        android:id="@+id/side_navigation_menu_item9"
-        android:title="Fin del juego"/>
-    <item
-        android:id="@+id/side_navigation_menu_item10"
-        android:title="Palabras clave"/>
+        android:id="@+id/side_creditos"
+        android:title="Créditos"/>
 
 </menu>

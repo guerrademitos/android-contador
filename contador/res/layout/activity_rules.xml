@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rl_rules"
-    tools:context=".RulesActivity" >
+    tools:context=".RulesActivity"
+    android:background="#CCC" >
 
     <RelativeLayout
         android:layout_width="20dp"
@@ -20,6 +21,14 @@
         
         <include layout="@layout/rules_01"/>
         <include layout="@layout/rules_02"/>
+        <include layout="@layout/rules_03"/>
+        <include layout="@layout/rules_04"/>
+        <include layout="@layout/rules_05"/>
+        <include layout="@layout/rules_06"/>
+        <include layout="@layout/rules_07"/>
+        <include layout="@layout/rules_08"/>
+        <include layout="@layout/rules_09"/>
+        <include layout="@layout/rules_10"/>
 		     
     </ViewFlipper>
    

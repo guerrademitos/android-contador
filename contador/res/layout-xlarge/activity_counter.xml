@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:alpha="0.5"
+                    android:alpha="0.7"
                     android:src="@drawable/ic_prefs_small" />
             </RelativeLayout>
         </RelativeLayout>
@@ -145,7 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:alpha="0.5"
+                    android:alpha="0.7"
                     android:src="@drawable/ic_prefs_small" />
             </RelativeLayout>
 
@@ -168,14 +168,15 @@
             android:id="@+id/tv_turn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/rl_player1_down"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:background="@color/white_border2x"
             android:clickable="true"
             android:onClick="changeMainPlayer"
             android:padding="10dp"
             android:text="Turno"
             android:textSize="@dimen/xlarge_turn_textsize" />
+
     </RelativeLayout>
 
     <include layout="@layout/adview"/>

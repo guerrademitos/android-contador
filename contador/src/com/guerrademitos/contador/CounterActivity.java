@@ -197,11 +197,6 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		dialog.show(getSupportFragmentManager(), "Select Background");
 	}
 	
-	public void changeBg(int resId){
-		
-	}
-	
-	
 	
 	@SuppressLint("ValidFragment")
 	public class BuyItDialogFragment extends DialogFragment{
