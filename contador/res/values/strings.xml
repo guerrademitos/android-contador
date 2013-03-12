@@ -12,7 +12,7 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="menu_reglas">Reglas</string>
     
-    <string name="buyit">Para desbloquear esta funcion debes comprar la aplicación. ¿Deseas visitar la tienda?</string>
+    <string name="buyit">Para desbloquear esta función debes comprar la aplicación. ¿Deseas visitar la tienda?</string>
     <string name="buy">Comprar</string>
     <string name="later">En otro momento</string>
 
