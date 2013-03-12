@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_reglas14_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:text="Reglas multiplayer"
+        android:textSize="30sp" />
+    
+    <TextView
+        android:id="@+id/tv_reglas14_subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas14_titulo"
+        android:layout_below="@+id/tv_reglas14_titulo"
+        android:layout_marginTop="15dp"
+        android:text="Transferencia"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_reglas14_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas14_subtitulo"
+        android:layout_below="@+id/tv_reglas14_subtitulo"
+        android:text="Idéntico a las reglas de 2 jugadores."        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_reglas14_subtitulo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas14_text"
+        android:layout_below="@+id/tv_reglas14_text"
+        android:layout_marginTop="15dp"
+        android:text="Influencia"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_reglas14_text2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/tv_reglas14_subtitulo2"
+        android:layout_below="@+id/tv_reglas14_subtitulo2"
+        android:text="En esta fase todos jugadores realizan por orden de turno acciones de influencia, empezando por el jugador inicial. Hasta que todos jugadores pasan consecutivamente Las acciones de influencia pueden afectar a cualquier jugador de la mesa."        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLines="100" />    
+    
+</RelativeLayout>

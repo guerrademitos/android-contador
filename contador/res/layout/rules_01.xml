@@ -22,6 +22,6 @@
         android:layout_below="@+id/tv_reglas01_titulo"
         android:text="-Panteón: Carta que indica que facción jugamos, nuestro poder inicial y nos da habilidades.\n-Mazo de dioses: Compuesto por un mínimo de 20 cartas y contiene personajes, recursos y eventos. (reverso marrón)\n-Mazo de designios: Compuesto un mínimo de 30 cartas y contiene acciones, invocaciones y equipo. (reverso azul)\n-Contadores, Monedas…  que nos servirán para llevar el control de la cantidad de POD que tiene cada jugador los que recomendamos unos 30 por jugador para llevar el control de poder"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:maxLines="10" />
+        android:maxLines="100" />
 
 </RelativeLayout>

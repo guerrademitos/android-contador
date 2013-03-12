@@ -102,7 +102,24 @@ public class RulesActivity extends Activity implements SwipeInterface,ISideNavig
 		case R.id.side_objetivos:
 			flipper.setDisplayedChild(1);
 			break;
-
+		case R.id.side_zonas_juego:
+			flipper.setDisplayedChild(2);
+			break;
+		case R.id.side_golden_rule:
+			flipper.setDisplayedChild(3);
+			break;
+		case R.id.side_habilidades:
+			flipper.setDisplayedChild(4);
+			break;
+		case R.id.side_reglas2jugadores:
+			flipper.setDisplayedChild(5);
+			break;
+		case R.id.side_reglas_multi:
+			flipper.setDisplayedChild(11);
+			break;
+		case R.id.side_creditos:
+			flipper.setDisplayedChild(16);
+			break;
 		default:
 			sideNavigationView.hideMenu();
 			break;

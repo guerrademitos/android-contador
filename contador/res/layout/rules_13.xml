@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_reglas13_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:text="Reglas multijugador"
+        android:textSize="30sp" />
+    
+    <TextView
+        android:id="@+id/tv_reglas13_subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas13_titulo"
+        android:layout_below="@+id/tv_reglas13_titulo"
+        android:layout_marginTop="15dp"
+        android:text="Inicio de la partida"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_reglas13_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/tv_reglas13_subtitulo"
+        android:layout_below="@+id/tv_reglas13_subtitulo"
+        android:text="Para determinar el jugador inicial cada jugador coloca en el centro de la mesa una carta diferente (con el mismo dorso) boca abajo, se barajan y se coloca una en cada zona de juego se revelan por orden en sentido de las agujas del reloj, siendo la primera la que determina el jugador inicial.\nEl jugador inicial coge de la reserva central tantos contadores como indique su panteón y uno más por caja jugador en la partida, el siguiente coge  tantos contadores como indica su panteón y uno más por cada jugador menos 1, y así sucesivamente."        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLines="100" />
+
+</RelativeLayout>

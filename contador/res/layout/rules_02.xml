@@ -22,6 +22,6 @@
         android:layout_below="@+id/tv_reglas02_titulo"
         android:text="La partida termina cuando sólo queda un jugador. Se puede eliminar jugadores de la partida de dos formas:\nDIOS DE DIOSES: Si después de la reorganización un jugador tiene 30 o más puntos de poder en su reserva (35 en modo multijugador) el resto de jugadores son eliminados de la partida. Si dos o más jugadores están a más de 30 (o 35), gana el que más puntos tenga. En caso de empate el “jugador inicial” es el que gana la partida.\nOLVIDO: Si el contrario en cualquier momento tiene O puntos en su reserva, este es eliminado de la partida."
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:maxLines="10" />
+        android:maxLines="100" />
 
 </RelativeLayout>

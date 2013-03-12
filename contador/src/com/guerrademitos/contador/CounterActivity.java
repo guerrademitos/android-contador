@@ -199,6 +199,7 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 	
 	
 	@SuppressLint("ValidFragment")
+
 	public class BuyItDialogFragment extends DialogFragment{
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstance){
@@ -255,6 +256,40 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 
 		}
 		adView.loadAd(adRequest);
+	}
+		
+	public class SelectBackgroundDialogFragment extends DialogFragment {
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+	        // Use the Builder class for convenient dialog construction
+	        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+	        builder.setTitle("Selecciona tu panteón.")
+	        		.setItems(R.array.pantheons, new DialogInterface.OnClickListener() {
+	                    public void onClick(DialogInterface dialog, int which) {
+	                        // The 'which' argument contains the index position of the selected item
+	                    	switch(which){
+	                    		case 0: //Takanamahara
+	                    			rl.setBackgroundResource(R.drawable.c_bg_takamagahara);
+	                    			rltv.setText("18");
+	                    			break;
+	                    		case 1:	//Yomi
+	                    			rl.setBackgroundResource(R.drawable.c_bg_yomi);
+	                    			rltv.setText("20");
+	                    			break;
+	                    		case 2: //Niflheim
+	                    			rl.setBackgroundResource(R.drawable.c_bg_niflheim);
+	                    			rltv.setText("19");
+	                    			break;
+	                    		case 3: //Asgard
+	                    			rl.setBackgroundResource(R.drawable.c_bg_asgard);
+	                    			rltv.setText("18");
+	                    			break;
+	                    	}
+	                    }
+	                 });
+	        // Create the AlertDialog object and return it
+	        return builder.create();
+	    }
 	}
 
 	@Override

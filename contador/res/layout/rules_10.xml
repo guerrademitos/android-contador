@@ -4,42 +4,34 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/tv_reglas01_titulo"
+        android:id="@+id/tv_reglas10_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="15dp"
-        android:text="Introducción"
+        android:text="Reglas para 2 jugadores"
         android:textSize="30sp" />
-
-    <ScrollView
-        android:id="@+id/scroll_rules01"
+    
+    <TextView
+        android:id="@+id/tv_reglas10_subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tv_reglas01_titulo"
-        android:layout_below="@+id/tv_reglas01_titulo"
-        android:layout_marginTop="19dp" >
+        android:layout_alignLeft="@+id/tv_reglas10_titulo"
+        android:layout_below="@+id/tv_reglas10_titulo"
+        android:layout_marginTop="15dp"
+        android:text="Enfrentamiento"
+        android:textSize="25sp" />
 
-        <RelativeLayout
-            android:id="@+id/rl_reglas01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/tv_reglas01_text"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Guerra de Mitos es un juego de estrategia para dos o más jugadores, que se enfrentan para decidir el destino de una mitología.
-Cada jugador dispone de un mazo de Dioses (personajes, eventos y recursos) con los cuales defenderá y ostentará el poder para su Mitología y un mazo de Designios (acciones, invocaciones y equipos) con tácticas con las que sus Dioses podrán conquistar la victoria.
-Los juegos de estrategia de cartas combinan estrategia y colección, podrás diseñar, armar y componer tu Mitología de una forma exclusiva. 
-Empieza la colección y con cada expansión podrás mejorar tus mazosy/o hacer otros nuevos.
-
-¿Te atreves a jugar?"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-            
-        </RelativeLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/tv_reglas10_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/tv_reglas10_subtitulo"
+        android:layout_below="@+id/tv_reglas10_subtitulo"
+        android:text="Batalla:\nAmbos jugadores realizan alternativamente acciones de batalla, empezando por el jugador inicial, hasta que ambos jugadores pasan.\nDebe haber al menos un personaje del jugador que efectúe la acción en el campo de batalla.\nEl coste lo paga el personaje en el campo de batalla.\nLas acciones de enfrentamiento no pueden afectar a personajes fuera del campo de batalla.\n\n\nResolución:\nSe cuenta el diferencial de batalla.\nLos personajes preparados cuentan su fuerza total, los cansados cuentan la mitad redondeando hacia abajo y los agotados cuentan fuerza 0.\nElimina de la reserva del perdedor poder igual la diferencial de batalla."        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLines="100" />
 
 </RelativeLayout>
