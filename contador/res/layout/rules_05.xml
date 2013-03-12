@@ -22,6 +22,6 @@
         android:layout_below="@+id/tv_reglas05_titulo"
         android:text="Llamamos habilidad a las acciones impresas de las cartas en juego, las habilidades están compuestas por tres partes:\n1.- Fase: En mayúsculas, determina en qué fase puede ser jugada.\n2.- Costes: Texto antes del “;” (puede que una habilidad no tenga costes) indica las condiciones para poder jugar la habilidad, si no los cumplimos, la habilidad no pude ser jugada.\n3.- Efectos: Consecuencias de la habilidad, si no indican duración son eliminados en la fase de reorganización.\nNo se puede jugar ninguna acción si no se pueden pagar los costes o la carta está cansada. (Carta cansada: Posición horizontal)"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:maxLines="10" />
+        android:maxLines="100" />
 
 </RelativeLayout>

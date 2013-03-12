@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/tv_reglas09_titulo"
+        android:id="@+id/tv_reglas11_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -15,22 +15,22 @@
         android:textSize="30sp" />
     
     <TextView
-        android:id="@+id/tv_reglas09_subtitulo"
+        android:id="@+id/tv_reglas11_subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tv_reglas09_titulo"
-        android:layout_below="@+id/tv_reglas09_titulo"
+        android:layout_alignLeft="@+id/tv_reglas11_titulo"
+        android:layout_below="@+id/tv_reglas11_titulo"
         android:layout_marginTop="15dp"
-        android:text="Enfrentamiento"
+        android:text="Reorganización"
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/tv_reglas09_text"
+        android:id="@+id/tv_reglas11_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignLeft="@+id/tv_reglas09_subtitulo"
-        android:layout_below="@+id/tv_reglas09_subtitulo"
-        android:text="Esta fase se divide en tres partes diferentes: Asignación, batalla y resolución.\n\nAsignación:\nAlternativamente se asignan personajes al campo de batalla, pagando un punto de poder, hasta que ambos jugadores pasan.\nSi un jugador pasa, no puede volver a asignar personajes a la batalla."        
+        android:layout_alignLeft="@+id/tv_reglas11_subtitulo"
+        android:layout_below="@+id/tv_reglas11_subtitulo"
+        android:text="Se eliminan todos los posibles efectos activos que no especifiquen duración.\nLos personajes que tienen más poder en sus reservas que el poder máximo eliminan el excedente de poder.\nCada jugador roba una carta del mazo de designios y la pone en su mano.\nSe preparan (posición vertical) todas las cartas en juego.\nEl contador de jugador inicial pasa al jugador de tu izquierda."        
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:maxLines="100" />
 

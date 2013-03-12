@@ -4,23 +4,23 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/tv_reglas04_titulo"
+        android:id="@+id/tv_reglas18_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="15dp"
-        android:text="Las 'Golden Rules'"
+        android:text="Créditos"
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/tv_reglas02_text"
+        android:id="@+id/tv_reglas18_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignLeft="@+id/tv_reglas04_titulo"
-        android:layout_below="@+id/tv_reglas04_titulo"
-        android:text="Tus cartas nunca pasan a ser propiedad de otro jugador como resultado del juego. Al final de la partida todas las cartas con las que comenzaste la partida se te devuelven.\nMULTIJUGADOR: En caso de ser eliminado durante la partida, las cartas que permanecen bajo el control de otro jugador seguirán en juego hasta que se destruyan o finalice la partida\nSi alguna carta contradice estas reglas, el texto de la carta prevalece sobre las mismas"
+        android:layout_alignLeft="@+id/tv_reglas18_titulo"
+        android:layout_below="@+id/tv_reglas18_titulo"
+        android:text="Beta Testers:  Xavi Correro, Albert Mialet, Ramón Peña, Salvador Alcalde, Francisco Lara, Borja Clavería, María Pérez y Francisco Gallego.\n\nRelatos/Historia: Albert Mialet, María Pérez, Oriol Villanueva, Alberto Rodríguez, LaAnjanaBrenna, Marc Gomez, Toni Ranchal, Marcos Dacosta, Francisco Rodríguez, Remi Cavaille, Diego Amela, Eva Martínez."        
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:maxLines="100" />
 

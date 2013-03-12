@@ -32,7 +32,7 @@ public class RateDialogFragment2 extends DialogFragment{
                })
                .setNegativeButton("No, gracias", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
-                       // No molestar m�s
+                       // No molestar más
                 	   AppRater.dontBotherAgain();
                        dialog.dismiss();
                    }

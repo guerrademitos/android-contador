@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_reglas12_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:text="Reglas multijugador"
+        android:textSize="30sp" />
+    
+    <TextView
+        android:id="@+id/tv_reglas12_subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_reglas12_titulo"
+        android:layout_below="@+id/tv_reglas12_titulo"
+        android:layout_marginTop="15dp"
+        android:text="Objetivos"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_reglas12_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/tv_reglas12_subtitulo"
+        android:layout_below="@+id/tv_reglas12_subtitulo"
+        android:text="En el modo multijugador hay un sistema de puntuación que determinará quién es el ganador.\nCada vez que un jugador es eliminado (relegado al olvido) de la partida el jugador de su derecha obtiene un punto de victoria.\nSi un jugador consigue empezar su turno con 35 contadores (dios de dioses) de poder en su reserva éste gana tantos puntos de victoria como jugadores quedan en la mesa y se acaba la partida.\nEl último jugador en la mesa gana un punto adicional de victoria."        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLines="100" />
+
+</RelativeLayout>
