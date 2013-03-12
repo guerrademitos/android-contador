@@ -182,14 +182,20 @@ public class CounterActivity extends FragmentActivity {
 	                        // The 'which' argument contains the index position of the selected item
 	                    	switch(which){
 	                    		case 0: //Takanamahara
-	                    			rl.setBackgroundResource(R.drawable.c_bg_takanamahara);
+	                    			rl.setBackgroundResource(R.drawable.c_bg_takamagahara);
 	                    			rltv.setText("18");
 	                    			break;
 	                    		case 1:	//Yomi
+	                    			rl.setBackgroundResource(R.drawable.c_bg_yomi);
+	                    			rltv.setText("20");
 	                    			break;
 	                    		case 2: //Niflheim
 	                    			rl.setBackgroundResource(R.drawable.c_bg_niflheim);
-	                    			rltv.setText("20");
+	                    			rltv.setText("19");
+	                    			break;
+	                    		case 3: //Asgard
+	                    			rl.setBackgroundResource(R.drawable.c_bg_asgard);
+	                    			rltv.setText("18");
 	                    			break;
 	                    	}
 	                    }

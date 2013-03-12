@@ -21,7 +21,7 @@
         android:layout_alignLeft="@+id/tv_reglas07_titulo"
         android:layout_below="@+id/tv_reglas07_titulo"
         android:layout_marginTop="15dp"
-        android:text="Inicio de la partida"
+        android:text="Transferencia"
         android:textSize="25sp" />
 
     <TextView
