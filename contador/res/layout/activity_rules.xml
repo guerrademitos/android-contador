@@ -29,6 +29,14 @@
         <include layout="@layout/rules_08"/>
         <include layout="@layout/rules_09"/>
         <include layout="@layout/rules_10"/>
+        <include layout="@layout/rules_11"/>
+        <include layout="@layout/rules_12"/>
+        <include layout="@layout/rules_13"/>
+        <include layout="@layout/rules_14"/>
+        <include layout="@layout/rules_15"/>
+        <include layout="@layout/rules_16"/>
+        <include layout="@layout/rules_17"/>
+        <include layout="@layout/rules_18"/>
 		     
     </ViewFlipper>
    
