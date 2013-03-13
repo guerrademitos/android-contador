@@ -58,6 +58,7 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		tv_timer = (TextView)findViewById(R.id.tv_timer);
 		isTimerOn = false;
 		millisLeft = timeToMillis(40, 00);
+		timer = new myCounter(millisLeft,1000);
 		
 		turn = 1;
 		iv1 = (ImageView)findViewById(R.id.iv_player1);
@@ -75,8 +76,7 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		
 		interstitial.loadAd(adRequest);
 		interstitial.setAdListener(this);
-		
-		
+
 	}
 	
 	@Override
@@ -157,6 +157,32 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 			isTimerOn=false;
 			timer.cancel();
 		}
+	}
+	
+	public void reset(View v){
+		iv1.setVisibility(View.VISIBLE);
+		iv2.setVisibility(View.GONE);
+		tv1.setText("20");
+		tv2.setText("20");
+		RelativeLayout rl1 = (RelativeLayout)findViewById(R.id.c_bg_player1);
+		RelativeLayout rl2 = (RelativeLayout)findViewById(R.id.c_bg_player2);
+		
+		rl1.setBackgroundResource(0);
+		rl2.setBackgroundResource(0);
+		
+		timer.cancel();
+		millisLeft = timeToMillis(40, 00);
+		tv_timer.setText("40:00");
+	}
+	
+	public void showInfoOverlay(View v){
+		timerClick(v);
+		findViewById(R.id.rules_overlay).setVisibility(View.VISIBLE);
+	}
+	
+	public void hideInfoOverlay(View v){
+		timerClick(v);
+		findViewById(R.id.rules_overlay).setVisibility(View.GONE);
 	}
 	
 	public class myCounter extends CountDownTimer{

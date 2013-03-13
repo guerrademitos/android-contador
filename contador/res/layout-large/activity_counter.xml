@@ -173,9 +173,37 @@
             android:padding="10dp"
             android:text="Turno"
             android:textSize="@dimen/large_turn_textsize" />
+        
+        <Button
+            android:id="@+id/TextView01"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/tv_turn"
+            android:layout_below="@+id/tv_turn"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/ic_reset"
+            android:clickable="true"
+            android:onClick="reset"
+            android:padding="10dp"
+            android:textSize="@dimen/xlarge_turn_textsize" />
+
+        <Button
+            android:id="@+id/TextView01"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/tv_turn"
+            android:layout_below="@+id/tv_turn"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/ic_info"
+            android:clickable="true"
+            android:onClick="showInfoOverlay"
+            android:padding="10dp"
+            android:textSize="@dimen/xlarge_turn_textsize" />
+        
 
     </RelativeLayout>
     
     <include layout="@layout/adview"/>
-
+	<include layout="@layout/rules_overlay" />
+    
 </RelativeLayout>
