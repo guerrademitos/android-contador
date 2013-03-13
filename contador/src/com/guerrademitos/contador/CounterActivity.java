@@ -49,6 +49,7 @@ public class CounterActivity extends FragmentActivity {
 		tv_timer = (TextView)findViewById(R.id.tv_timer);
 		isTimerOn = false;
 		millisLeft = timeToMillis(40, 00);
+		timer = new myCounter(millisLeft,1000);
 		
 		turn = 1;
 		iv1 = (ImageView)findViewById(R.id.iv_player1);

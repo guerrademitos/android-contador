@@ -15,8 +15,7 @@ import android.widget.Toast;
 public class Utils {
 	
 	public static String APP_TITLE = "Guerra de Mitos - Contador";
-	//public static String APP_NAME = "com.guerrademitos.contador";
-	public static String APP_NAME = "com.rovio.angrybirds";
+	public static String APP_NAME = "com.guerrademitos.contador";
 	
 	private static Context context;
 	
