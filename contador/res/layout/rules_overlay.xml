@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66000000"
+    android:id="@+id/rules_overlay"
+    android:visibility="gone"
+    android:clickable="true"
+    android:onClick="hideInfoOverlay" >
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="250dp"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:layout_centerInParent="true">
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                
+                <TextView
+			        android:id="@+id/textView1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="Reglas rápidas"
+			        android:textSize="30dp" />
+                
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\n\nINICIO DEL JUEGO\n\nSe prepara la denominada Reserva Central, que contiene contadores de poder. Cada jugador revela su carta de Panteón y la pone en juego cogiendo de la Reserva Central tantos contadores como puntos de poder indica su Panteón (esquina superior derecha).\nSe baraja el mazo de dioses y se reparte en cuatro montones, formando así los Oráculos. Se baraja el mazo de Designios y se coloca boca abajo. Se roban cinco cartas, formando así la mano inicial. Para determinar el jugador inicial ambos jugadores realizan una Apuesta (ver Reglas).\n\nFASES DEL JUEGO\n\nTRANSFERENCIA:\nEn esta fase gestionamos nuestros Puntos de Transferencia para poner en juego los Personajes y recursos que nos ofrezcan los Oráculos.\nAmbos jugadores, empezando por el jugador inicial, revelan las cartas de sus Oráculos (resolviendo Eventos si los hubiera) y transfieren la cantidad de Puntos de Poder que le pertenezcan según el turno para poner en juego tantos Recursos como Personajes.\n\nINFLUENCIA:\nEn esta fase nuestros Dioses se preparan para la batalla o intentan entorpecer al contrario.\nAmbos jugadores realizan alternativamente acciones de Influencia, empezando por el jugador inicial, hasta que ambos jugadores pasan.\nEstas acciones pueden estar escritas en cartas de Personaje, cartas de Recurso o Acciones de la mano, aunque también hay dos tipos especiales de acciones que se pueden realizar en esta fase:\n- Equipar: Se puede añadir un Equipo a un Personaje en juego, pagando el coste del Equipo de la reserva del Personaje\n- Meditar: Se Cansa (girado 90º) a un Personaje, el cual gana dos Puntos de Poder.\n\nENFRENTAMIENTO:\nEn esta fase nuestro objetivo es llegar a tener más Fuerza (esquina superior izquierda) que el contrario, ya que se eliminan tantos Puntos de Poder como diferencia de Fuerza hay entre los dos Ejércitos de la reserva del perdedor.\nAmbos jugadores, empezando por el jugador inicial, deciden cuales de sus personajes intervendrán en la batalla, y luego realizan Acciones de enfrentamiento alternativamente hasta que los dos jugadores pasan.\nLos personajes Cansados sólo cuentan con la mitad de su Fuerza y los Agotados (sin poder) no cuentan su Fuerza.\n\nREORGANIZACION:\nEn esta fase ambos jugadores roban una carta de su Mazo de Designios, se Preparan (posición vertical) todas las cartas en juego y el contador de jugador inicial cambia de jugador.\n\nFIN DEL JUEGO\n\nLa partida termina si uno de los dos jugadores empieza su turno con 30 Puntos de Poder en su Reserva o ha reducido a Cero la Reserva del contrario" />                
+            </LinearLayout>
+        </ScrollView>
+        
+    </RelativeLayout>
+
+</RelativeLayout>
