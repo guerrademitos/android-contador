@@ -176,6 +176,8 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		tv_timer.setText("40:00");
 		isTimerOn = false;
 		wasTimerOn = false;
+		
+		turn = 1;
 	}
 	
 	public void showInfoOverlay(View v){
