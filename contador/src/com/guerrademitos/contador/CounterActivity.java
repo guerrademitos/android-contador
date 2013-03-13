@@ -25,7 +25,7 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 
 	private TextView tv1, tv2, tv_timer;
 	
-	private boolean isTimerOn;
+	private boolean isTimerOn, wasTimerOn;
 	protected long millisLeft;
 	myCounter timer;
 	
@@ -57,6 +57,7 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		
 		tv_timer = (TextView)findViewById(R.id.tv_timer);
 		isTimerOn = false;
+		wasTimerOn = false;
 		millisLeft = timeToMillis(40, 00);
 		timer = new myCounter(millisLeft,1000);
 		
@@ -167,21 +168,27 @@ public class CounterActivity extends FragmentActivity implements AdListener {
 		RelativeLayout rl1 = (RelativeLayout)findViewById(R.id.c_bg_player1);
 		RelativeLayout rl2 = (RelativeLayout)findViewById(R.id.c_bg_player2);
 		
-		rl1.setBackgroundResource(0);
-		rl2.setBackgroundResource(0);
+		rl1.setBackgroundResource(R.color.white_overlay);
+		rl2.setBackgroundResource(R.color.white_overlay);
 		
 		timer.cancel();
 		millisLeft = timeToMillis(40, 00);
 		tv_timer.setText("40:00");
+		isTimerOn = false;
+		wasTimerOn = false;
 	}
 	
 	public void showInfoOverlay(View v){
-		timerClick(v);
+		wasTimerOn=isTimerOn;
+		if(isTimerOn)
+			timerClick(v);
 		findViewById(R.id.rules_overlay).setVisibility(View.VISIBLE);
 	}
 	
 	public void hideInfoOverlay(View v){
-		timerClick(v);
+		if(wasTimerOn){
+			timerClick(v);
+		}
 		findViewById(R.id.rules_overlay).setVisibility(View.GONE);
 	}
 	
