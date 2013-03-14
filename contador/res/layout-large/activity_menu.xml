@@ -15,44 +15,39 @@
         android:background="@color/black_overlay" >
 
         <RelativeLayout
-            android:id="@+id/rl_counter"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="46dp"
-            android:layout_marginTop="50dp"
-            android:onClick="startCounterApp" >
-
-            <include layout="@layout/ly_counter" />
-        </RelativeLayout>
-
-        <RelativeLayout
             android:id="@+id/rl_rules"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="226dp"
-            android:layout_marginTop="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:onClick="openRules" >
 
             <include layout="@layout/ly_rules" />
         </RelativeLayout>
-        
+
         <RelativeLayout
             android:id="@+id/rl_prefs"
             android:layout_width="250dp"
             android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="376dp"
-            android:layout_marginTop="50dp"
+            android:layout_alignTop="@+id/rl_rules"
+            android:layout_marginLeft="29dp"
+            android:layout_toRightOf="@+id/rl_rules"
             android:onClick="openPrefs" >
 
             <include layout="@layout/ly_prefs" />
         </RelativeLayout>
-        
+
+        <RelativeLayout
+            android:id="@+id/rl_counter"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/rl_rules"
+            android:layout_marginRight="75dp"
+            android:layout_toLeftOf="@+id/rl_rules"
+            android:onClick="startCounterApp" >
+
+            <include layout="@layout/ly_counter" />
+        </RelativeLayout>
         
     </RelativeLayout>
 
