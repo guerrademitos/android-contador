@@ -1,8 +1,8 @@
-package com.guerrademitos.contador;
+package com.guerrademitos.contadorlite;
 
 import com.bugsense.trace.BugSenseHandler;
 
-import com.guerrademitos.contador.utils.Utils;
+import com.guerrademitos.contadorlite.utils.Utils;
 
 import android.app.Activity;
 import android.content.Intent;

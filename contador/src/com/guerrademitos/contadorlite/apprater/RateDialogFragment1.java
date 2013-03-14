@@ -1,6 +1,6 @@
-package com.guerrademitos.contador.apprater;
+package com.guerrademitos.contadorlite.apprater;
 
-import com.guerrademitos.contador.utils.Utils;
+import com.guerrademitos.contadorlite.utils.Utils;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -12,14 +12,14 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 @SuppressLint("ValidFragment")
-public class RateDialogFragment2 extends DialogFragment{
+public class RateDialogFragment1 extends DialogFragment{
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstance){
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		
 		builder.setTitle("Valora Guerra de Mitos - Contador");
-		builder.setMessage("No queremos molestarte más, pero de verdad que tu apoyo nos será de mucha ayuda. ¿Nos valoras la aplicación? ¡Muchas gracias!")
-			   .setPositiveButton("Venga, vale!", new DialogInterface.OnClickListener() {
+		builder.setMessage("¿Te gusta Guerra de Mitos? Ayúdanos valorando la aplicación. No te olvides de opinar :) ¡Gracias por tu apoyo!")
+			   .setPositiveButton("Valorar!", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                        //Open store
                 	   try {
@@ -30,7 +30,13 @@ public class RateDialogFragment2 extends DialogFragment{
                 	   	AppRater.dontBotherAgain();
                    }
                })
-               .setNegativeButton("No, gracias", new DialogInterface.OnClickListener() {
+			   .setNeutralButton("Quizá luego", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       // User cancelled the dialog
+                	   dialog.dismiss();
+                   }
+               })
+               .setNegativeButton("Nunca", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                        // No molestar más
                 	   AppRater.dontBotherAgain();

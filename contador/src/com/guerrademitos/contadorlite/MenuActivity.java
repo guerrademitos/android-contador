@@ -1,7 +1,7 @@
-package com.guerrademitos.contador;
+package com.guerrademitos.contadorlite;
 
-import com.guerrademitos.contador.apprater.AppRater;
-import com.guerrademitos.contador.utils.Utils;
+import com.guerrademitos.contadorlite.apprater.AppRater;
+import com.guerrademitos.contadorlite.utils.Utils;
 
 import android.net.Uri;
 import android.os.Bundle;

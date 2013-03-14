@@ -1,4 +1,4 @@
-package com.guerrademitos.contador.apprater;
+package com.guerrademitos.contadorlite.apprater;
 
 import android.content.Context;
 import android.content.SharedPreferences;

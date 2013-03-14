@@ -1,8 +1,8 @@
-package com.guerrademitos.contador;
+package com.guerrademitos.contadorlite;
 
 import com.google.ads.*;
 import com.google.ads.AdRequest.ErrorCode;
-import com.guerrademitos.contador.utils.Utils;
+import com.guerrademitos.contadorlite.utils.Utils;
 
 import android.net.Uri;
 import android.os.Bundle;

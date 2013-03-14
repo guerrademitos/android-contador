@@ -1,4 +1,4 @@
-package com.guerrademitos.contador.utils;
+package com.guerrademitos.contadorlite.utils;
 
 import android.app.Activity;
 import android.content.Context;

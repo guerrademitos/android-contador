@@ -1,6 +1,6 @@
-package com.guerrademitos.contador;
+package com.guerrademitos.contadorlite;
 
-import com.guerrademitos.contador.utils.Utils;
+import com.guerrademitos.contadorlite.utils.Utils;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;

@@ -1,9 +1,9 @@
-package com.guerrademitos.contador;
+package com.guerrademitos.contadorlite;
 
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
-import com.guerrademitos.contador.gestures.*;
-import com.guerrademitos.contador.utils.Utils;
+import com.guerrademitos.contadorlite.gestures.*;
+import com.guerrademitos.contadorlite.utils.Utils;
 
 import android.app.Activity;
 import android.os.Bundle;

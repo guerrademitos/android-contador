@@ -1,4 +1,4 @@
-package com.guerrademitos.contador.gestures;
+package com.guerrademitos.contadorlite.gestures;
 
 import android.util.Log;
 import android.view.MotionEvent;
